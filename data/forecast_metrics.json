@@ -1,0 +1,44 @@
+{
+  "selected_model": "Random Forest",
+  "selection_method": "Lowest validation MAE; chronological split",
+  "sample_counts": {
+    "total": 1589,
+    "train": 1112,
+    "validation": 159,
+    "test": 318
+  },
+  "validation_metrics": {
+    "Linear Regression": {
+      "MAE": 26.78441455292343,
+      "RMSE": 33.55745302424054,
+      "R2": 0.7562375937965575
+    },
+    "Random Forest": {
+      "MAE": 26.65204785159922,
+      "RMSE": 33.869564575708836,
+      "R2": 0.751682130629923
+    }
+  },
+  "test_metrics": {
+    "MAE": 27.669107762477374,
+    "RMSE": 39.069640019620124,
+    "R2": 0.48595550184992475
+  },
+  "persistence_baseline_test_metrics": {
+    "MAE": 30.30817610062893,
+    "RMSE": 42.82963178093603,
+    "R2": 0.382253096613289
+  },
+  "test_period": {
+    "start": "2025-12-22",
+    "end": "2026-11-22"
+  },
+  "target_definition": "AQI on the next calendar day; samples without a next-day observation are excluded.",
+  "feature_definition": {
+    "lag_1": "AQI on current observation date",
+    "lag_2": "AQI from previous available observation",
+    "lag_7": "AQI from seven available observations earlier",
+    "rolling_mean": "Mean AQI over current and previous six available observations"
+  },
+  "deployment_model_training": "Refitted on all labelled observations after final test evaluation; do not use this deployment model to recompute held-out test metrics."
+}

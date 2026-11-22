@@ -1,0 +1,13 @@
+{
+  "model": "Random Forest",
+  "features": [
+    "day_of_year",
+    "month",
+    "lag_1",
+    "lag_2",
+    "lag_7",
+    "rolling_mean"
+  ],
+  "target": "next calendar day's AQI",
+  "training_rows": 1589
+}
